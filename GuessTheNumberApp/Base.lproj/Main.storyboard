@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,93 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GuessTheNumberApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RZk-5B-4cv">
+                                <rect key="frame" x="47" y="592" width="280" height="45"/>
+                                <color key="backgroundColor" red="0.42877615862630325" green="0.33033572634522013" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="5nQ-mh-WvK"/>
+                                    <constraint firstAttribute="width" constant="280" id="Jxm-a7-4fR"/>
+                                </constraints>
+                                <state key="normal" title="GJENERO">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="generateNumber:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bEo-nb-911"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Emri i lojtarit" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wfH-0U-x3N">
+                                <rect key="frame" x="63" y="70" width="250" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1fl-g8-ydg"/>
+                                    <constraint firstAttribute="width" constant="250" id="mwa-aJ-gil"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CkY-vQ-MgQ">
+                                <rect key="frame" x="137.5" y="454" width="100" height="80"/>
+                                <color key="backgroundColor" red="1" green="0.83176553724036117" blue="0.20647064081985156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="contentStretch" x="0.29999999999999999" y="0.10000000000000001" width="1" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="17V-RG-tC5"/>
+                                    <constraint firstAttribute="height" constant="80" id="WBa-8I-48N"/>
+                                </constraints>
+                                <state key="normal" title="QELLO">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="guessNumber:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zEY-Zn-0V8"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Numri " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QsA-tZ-CCo">
+                                <rect key="frame" x="142.5" y="398" width="91.5" height="32"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="GJENDJA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FUs-t5-jXc">
+                                <rect key="frame" x="150.5" y="263" width="75" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.16710164357494839" blue="0.21612559307500945" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="QsA-tZ-CCo" firstAttribute="top" secondItem="FUs-t5-jXc" secondAttribute="bottom" constant="114" id="9ox-LX-kKc"/>
+                            <constraint firstItem="CkY-vQ-MgQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="C16-Y8-btR"/>
+                            <constraint firstItem="FUs-t5-jXc" firstAttribute="top" secondItem="wfH-0U-x3N" secondAttribute="bottom" constant="163" id="Hw2-oe-oG1"/>
+                            <constraint firstItem="FUs-t5-jXc" firstAttribute="top" secondItem="wfH-0U-x3N" secondAttribute="bottom" constant="163" id="IkA-hx-tAQ"/>
+                            <constraint firstItem="RZk-5B-4cv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LcR-0B-gY2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="RZk-5B-4cv" secondAttribute="bottom" constant="30" id="OHe-pt-ITK"/>
+                            <constraint firstItem="CkY-vQ-MgQ" firstAttribute="top" secondItem="QsA-tZ-CCo" secondAttribute="bottom" constant="26" id="VyT-wO-CYu"/>
+                            <constraint firstItem="wfH-0U-x3N" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YiI-cO-Sj0"/>
+                            <constraint firstItem="FUs-t5-jXc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dyI-f7-3LD"/>
+                            <constraint firstItem="QsA-tZ-CCo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="i6q-ih-NLT"/>
+                            <constraint firstItem="RZk-5B-4cv" firstAttribute="top" secondItem="CkY-vQ-MgQ" secondAttribute="bottom" constant="58" id="jOX-kU-MRI"/>
+                            <constraint firstItem="wfH-0U-x3N" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="vc8-PA-AuJ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="lblProgressMessage" destination="FUs-t5-jXc" id="Nwd-Xb-Vux"/>
+                        <outlet property="tfGuessedNumber" destination="QsA-tZ-CCo" id="vqk-lP-ZJV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="118.29085457271366"/>
         </scene>
     </scenes>
 </document>
