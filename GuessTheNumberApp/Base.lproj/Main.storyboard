@@ -74,18 +74,32 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7hQ-ne-p6k">
+                                <rect key="frame" x="170" y="353" width="34" height="30"/>
+                                <color key="backgroundColor" red="0.21241859658588672" green="0.28673494170984459" blue="0.090075301545776282" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="RUAJ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveScore:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9ch-oq-ovr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.16710164357494839" blue="0.21612559307500945" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="QsA-tZ-CCo" firstAttribute="top" secondItem="FUs-t5-jXc" secondAttribute="bottom" constant="114" id="9ox-LX-kKc"/>
                             <constraint firstItem="CkY-vQ-MgQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="C16-Y8-btR"/>
+                            <constraint firstItem="7hQ-ne-p6k" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GwK-8e-KyL"/>
                             <constraint firstItem="FUs-t5-jXc" firstAttribute="top" secondItem="wfH-0U-x3N" secondAttribute="bottom" constant="163" id="Hw2-oe-oG1"/>
                             <constraint firstItem="FUs-t5-jXc" firstAttribute="top" secondItem="wfH-0U-x3N" secondAttribute="bottom" constant="163" id="IkA-hx-tAQ"/>
                             <constraint firstItem="RZk-5B-4cv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LcR-0B-gY2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="RZk-5B-4cv" secondAttribute="bottom" constant="30" id="OHe-pt-ITK"/>
+                            <constraint firstItem="QsA-tZ-CCo" firstAttribute="top" secondItem="7hQ-ne-p6k" secondAttribute="bottom" constant="15" id="UrD-Xs-IsR"/>
                             <constraint firstItem="CkY-vQ-MgQ" firstAttribute="top" secondItem="QsA-tZ-CCo" secondAttribute="bottom" constant="26" id="VyT-wO-CYu"/>
                             <constraint firstItem="wfH-0U-x3N" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YiI-cO-Sj0"/>
                             <constraint firstItem="FUs-t5-jXc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dyI-f7-3LD"/>
+                            <constraint firstItem="7hQ-ne-p6k" firstAttribute="top" secondItem="FUs-t5-jXc" secondAttribute="bottom" constant="69" id="ffE-Pa-u2b"/>
                             <constraint firstItem="QsA-tZ-CCo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="i6q-ih-NLT"/>
                             <constraint firstItem="RZk-5B-4cv" firstAttribute="top" secondItem="CkY-vQ-MgQ" secondAttribute="bottom" constant="58" id="jOX-kU-MRI"/>
                             <constraint firstItem="wfH-0U-x3N" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="vc8-PA-AuJ"/>
@@ -93,13 +107,30 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="btnSaveResults" destination="7hQ-ne-p6k" id="J54-wO-exl"/>
                         <outlet property="lblProgressMessage" destination="FUs-t5-jXc" id="Nwd-Xb-Vux"/>
                         <outlet property="tfGuessedNumber" destination="QsA-tZ-CCo" id="vqk-lP-ZJV"/>
+                        <outlet property="tfPlayerName" destination="wfH-0U-x3N" id="lqr-kz-a5K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="118.29085457271366"/>
+        </scene>
+        <!--Stats View Controller-->
+        <scene sceneID="bz0-hV-9rd">
+            <objects>
+                <viewController id="D6Y-Nb-KnB" customClass="StatsViewController" customModule="GuessTheNumberApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QFr-7G-yzz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.51636078469723956" blue="0.95368635835958915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="XWJ-sP-89v"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RaI-pT-ci5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="962" y="134"/>
         </scene>
     </scenes>
 </document>
