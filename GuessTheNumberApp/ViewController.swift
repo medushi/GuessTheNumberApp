@@ -52,11 +52,11 @@ class ViewController: UIViewController {
         var guessedNumber:Int = Int(tfGuessedNumber.text!)!
         if(guessedNumber > correctNumber){
             lblProgressMessage.text="ME I VOGEL!"
-            totalTriesCounter+=totalTriesCounter
+            totalTriesCounter=totalTriesCounter+1
         }
         if(guessedNumber < correctNumber){
             lblProgressMessage.text="ME I MADH!"
-            totalTriesCounter+=totalTriesCounter
+            totalTriesCounter=totalTriesCounter+1
         }
         else if(guessedNumber==correctNumber){
             lblProgressMessage.text="SAKTE"
@@ -66,6 +66,7 @@ class ViewController: UIViewController {
     }
     @IBAction func saveScore(_ sender: UIButton) {
         playername=String(tfPlayerName.text!)
+        print(totalTriesCounter)
         databaseHelper.insert(firstname: playername,score: totalTriesCounter)
         tfGuessedNumber.text=""
         tfPlayerName.text=""

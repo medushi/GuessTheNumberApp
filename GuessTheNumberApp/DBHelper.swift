@@ -82,7 +82,7 @@ class DBHelper
         }
         
         func read() -> [HighScoreModel] {
-            let queryStatementString = "SELECT * FROM highscore;"
+            let queryStatementString = "SELECT * FROM highscore WHERE numberOfTries>0 ORDER BY numberOfTries ASC;"
             var queryStatement: OpaquePointer? = nil
             var psns : [HighScoreModel] = []
             if sqlite3_prepare_v2(db, queryStatementString, -1, &queryStatement, nil) == SQLITE_OK {
