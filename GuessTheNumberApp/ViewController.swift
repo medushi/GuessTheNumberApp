@@ -44,6 +44,7 @@ class ViewController: UIViewController {
     
     @IBAction func generateNumber(_ sender: UIButton) {
         correctNumber=Int(arc4random_uniform(20)+1)
+        btnSaveResults.isHidden=true
         print(correctNumber)
     }
     
